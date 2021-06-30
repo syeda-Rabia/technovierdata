@@ -1,0 +1,47 @@
+import {
+  
+  Fab,
+} from "@material-ui/core";
+import React, { useRef } from "react";
+import ExpandLess from "@material-ui/icons/ExpandLess";
+import ExpandMore from "@material-ui/icons/ExpandMore";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+ const ref = useRef(null);
+
+const scroll = (scrollOffset) => {
+    ref.current.scrollLeft += scrollOffset;
+  };
+
+   <div className="float-right floatingbtn" style={{display:"flex",justifyContent:"space-between",zIndex:100}}>
+       
+          <div style={{paddingRight:10}}>
+            <Fab
+              className={classes.fab}
+              onClick={() => scroll(-50)}
+              color="primary"
+              aria-label="left"
+              style={{inlineSize:"34px",blockSize:"26px",backgroundColor:"#2258bf"}}
+            >
+              <ChevronLeftIcon style={{}}/>
+            </Fab>
+
+          </div>
+          <div style={{paddingRight:10}}>
+          <Fab
+              className={classes.fab}
+              
+              onClick={() => scroll(50)}
+              color="primary"
+              aria-label="right"
+              style={{inlineSize:"34px",blockSize:"26px",backgroundColor:"#2258bf"}}
+            >
+              <ChevronRightIcon />
+            </Fab>
+
+          </div>
+          
+          </div>
+          
+
+  <div className="table-responsive" ref={ref}>

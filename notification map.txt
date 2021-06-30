@@ -1,0 +1,111 @@
+import React, { useState } from "react";
+import { createStyles, Theme, makeStyles } from "@material-ui/core/styles";
+import logo from "./../../assests/Pak-Group-logo-1.png";
+import List from "@material-ui/core/List";
+
+import ListItem from "@material-ui/core/ListItem";
+import Divider from "@material-ui/core/Divider";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemAvatar from "@material-ui/core/ListItemAvatar";
+import Avatar from "@material-ui/core/Avatar";
+import Typography from "@material-ui/core/Typography";
+import { useHistory, Link } from "react-router-dom";
+import { getToken, onMessageListener } from "./../../firebase";
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      width: "100%",
+      maxWidth: "36ch",
+      backgroundColor: theme.palette.background.paper,
+    },
+    inline: {
+      display: "inline",
+    },
+  })
+);
+
+export default function AlignItemsList(props) {
+  const classes = useStyles();
+  const [show, setShow] = useState(false);
+  const [notification, setNotification] = useState({
+    title: "Notification title",
+    body: " Notification body",
+  });
+  const [notificationData, setNotificationData] = useState([]);
+  const [isTokenFound, setTokenFound] = useState(false);
+  getToken(setTokenFound);
+
+  onMessageListener()
+    .then((payload) => {
+      setShow(true);
+      setNotification({
+        title: payload.notification.title,
+        body: payload.notification.body,
+      });
+      setNotificationData((state) => [
+        {
+          title: payload.notification.title,
+          body: payload.notification.body,
+        },
+        ...state,
+      ]);
+    })
+    .catch((err) => console.log("failed: ", err));
+
+  console.log("notifications -------------->", notificationData);
+  let count = notificationData.length;
+  return (
+    <List className={classes.root}>
+      {notificationData.map((obj) => (
+        <>
+          <ListItem alignItems="flex-start">
+            <ListItemAvatar>
+              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+            </ListItemAvatar>
+            <ListItemText
+              primary={obj.title}
+              secondary={
+                <React.Fragment>
+                  {/* <Typography
+       component="span"
+       variant="body2"
+       className={classes.inline}
+       color="textPrimary"
+     >
+      Notification
+     </Typography> */}
+                  {obj.body}
+                </React.Fragment>
+              }
+            />
+          </ListItem>
+
+          <Divider variant="inset" component="li" />
+        </>
+      ))}
+      
+      
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Oui Oui"
+          secondary={
+            <React.Fragment>
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                Sandra Adams
+              </Typography>
+              {" — Do you have Paris recommendations? Have you ever…"}
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+    </List>
+  );
+}

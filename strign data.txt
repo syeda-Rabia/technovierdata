@@ -1,0 +1,122 @@
+export const AccData = [{
+      
+          
+  id: 1,
+  account_name: "Account1",
+  total_amount: "5000",
+  start_date: "2021-06-01",
+  end_date: "2021-06-09",
+  is_deleted: 0,
+  created_at: "2021-06-21T07:44:21.000000Z",
+  updated_at: "2021-06-21T07:44:21.000000Z",
+  hoc: [
+      {
+          id: 1,
+          account_id: 1,
+          name: "Home1",
+          is_deleted: 0,
+          created_at: "2021-06-21T07:44:21.000000Z",
+          updated_at: "2021-06-21T07:44:21.000000Z",
+          hoc_exp: [
+              {
+                  id: 1,
+                  hoc_id: 1,
+                  name_of_invoice: "Home1 name_of_invoice",
+                  amount_spent: "001 amount_spent",
+                  description: "001 description",
+                  cor: "001 cor",
+                  quantity: null,
+                  distributed_to: null,
+                  is_deleted: 0,
+                  created_at: "2021-06-21T07:44:21.000000Z",
+                  updated_at: "2021-06-21T07:44:21.000000Z"
+              },
+              {
+                  id: 2,
+                  hoc_id: 1,
+                  name_of_invoice: "Home1 name_of_invoice",
+                  amount_spent: "002 amount_spent",
+                  description: "002 description",
+                  cor: "002 cor",
+                  quantity: null,
+                  distributed_to: null,
+                  is_deleted: 0,
+                  created_at: "2021-06-21T07:44:21.000000Z",
+                  updated_at: "2021-06-21T07:44:21.000000Z"
+              }
+          ]
+      },
+      {
+        id: 1,
+        account_id: 1,
+        name: "office 1",
+        is_deleted: 0,
+        created_at: "2021-06-21T07:44:21.000000Z",
+        updated_at: "2021-06-21T07:44:21.000000Z",
+        hoc_exp: [
+            {
+                id: 1,
+                hoc_id: 1,
+                name_of_invoice: "Home1 name_of_invoice",
+                amount_spent: "001 amount_spent",
+                description: "001 description",
+                cor: "001 cor",
+                quantity: null,
+                distributed_to: null,
+                is_deleted: 0,
+                created_at: "2021-06-21T07:44:21.000000Z",
+                updated_at: "2021-06-21T07:44:21.000000Z"
+            },
+            {
+                id: 2,
+                hoc_id: 1,
+                name_of_invoice: "Home1 name_of_invoice",
+                amount_spent: "002 amount_spent",
+                description: "002 description",
+                cor: "002 cor",
+                quantity: null,
+                distributed_to: null,
+                is_deleted: 0,
+                created_at: "2021-06-21T07:44:21.000000Z",
+                updated_at: "2021-06-21T07:44:21.000000Z"
+            }
+        ]
+    },
+    {
+      id: 1,
+      account_id: 1,
+      name: "office 3",
+      is_deleted: 0,
+      created_at: "2021-06-21T07:44:21.000000Z",
+      updated_at: "2021-06-21T07:44:21.000000Z",
+      hoc_exp: [
+          {
+              id: 1,
+              hoc_id: 1,
+              name_of_invoice: "Home1 name_of_invoice",
+              amount_spent: "001 amount_spent",
+              description: "001 description",
+              cor: "001 cor",
+              quantity: null,
+              distributed_to: null,
+              is_deleted: 0,
+              created_at: "2021-06-21T07:44:21.000000Z",
+              updated_at: "2021-06-21T07:44:21.000000Z"
+          },
+          {
+              id: 2,
+              hoc_id: 1,
+              name_of_invoice: "Home1 name_of_invoice",
+              amount_spent: "002 amount_spent",
+              description: "002 description",
+              cor: "002 cor",
+              quantity: null,
+              distributed_to: null,
+              is_deleted: 0,
+              created_at: "2021-06-21T07:44:21.000000Z",
+              updated_at: "2021-06-21T07:44:21.000000Z"
+          }
+      ]
+  },
+  ]
+}]

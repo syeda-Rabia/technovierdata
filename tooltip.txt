@@ -1,0 +1,14 @@
+ <Tooltip placement="top-start" title="Delete Record">
+              <button
+                data-tip
+                data-for="DeleteTip"
+                type="button"
+                className="bg-transparent  button-focus mr-2"
+                onClick={() => {
+                  setShowDelete(true);
+                  setSelectedID(index);
+                }}
+              >
+                <FontAwesomeIcon style={{ fontSize: 15 }} icon={faTrash} />
+              </button>
+            </Tooltip>

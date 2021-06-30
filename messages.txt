@@ -1,0 +1,34 @@
+import SuccessNotification from "../../../components/SuccessNotification";
+import ErrorNotification from "../../../components/ErrorNotification";
+
+
+ const [message, setMessage] = React.useState("");
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
+
+*---------------------------------------------------------------*
+after table heading
+*---------------------------------------------------------------*
+
+  <SuccessNotification
+        showSuccess={showSuccessAlert}
+        message={message}
+        closeSuccess={setShowSuccessAlert}
+      />
+      <ErrorNotification
+        showError={showErrorAlert}
+        message={message}
+        closeError={setShowErrorAlert}
+      />
+
+*-----------------------------------------------------------------*
+on which reponse message will show
+*_----------------------------------------------------------------*
+
+ if (res.error === false) {
+        setMessage("Category Deleted Successfully");
+        setShowSuccessAlert(true);
+      } else {
+        setMessage("Operation Failed");
+        setShowErrorAlert(true);
+      }

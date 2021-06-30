@@ -1,0 +1,14 @@
+ return (<div>
+           <Row className="col-lg-12 shadow p-3 mb-3 bg-white rounded mt-3">
+           
+            <h3 style={{ color: "#818181" }}>Leads</h3>
+          </Row>
+         <div style={{ display: "block",
+       marginLeft: "auto",
+       marginRight: "auto",
+       marginTop:"10%",
+       marginBottom:"auto",
+       width:"50%"}}> 
+       <img style={{ width:"100%",height: "500px" }} src={nodata} /></div>
+         </div>
+       );

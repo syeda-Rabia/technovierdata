@@ -1,0 +1,51 @@
+  const SendFileToServer = async () => {
+  
+      
+      let token = JSON.parse(localStorage.getItem("token"));
+      console.log('token ',JSON.stringify(token))
+        let formData1={
+          lead_id:item.id,
+          recording_file: recordingFile,
+        };
+        // formData1 = JSON.stringify(formData1);
+        console.log('Recording File in Send File to Server Function is ----------------------------------',recordingFile);
+      let formData = new FormData();
+      formData.append("lead_id", item.id);
+      formData.append("recording_file", recordingFile);
+      console.log('form data JSON ------------>',JSON.stringify(formData));
+      
+
+      let uri = 'https://ova.technovier.com/api/'+ApiUrls.ADD_RECORDING;
+      console.log('uri',uri );
+
+      let axiosConfig = {
+        headers: {
+            'Content-Type': 'application/json;multipart/form-data;charset=UTF-8',
+            "Access-Control-Allow-Origin": "*",
+            Authorization: `Bearer ${token}`,
+        }
+      };
+
+      axios.post(uri,formData,
+       axiosConfig)
+      .then((res) => {
+        console.log("RESPONSE RECEIVED: ", res);
+        //  setAlertMessage(res.success);
+        setMessage("Recording submitted Successfully");
+        setShowSuccessAlert(true);
+      })
+      .catch((err) => {
+        console.log("AXIOS ERROR: ", err);
+        
+        // setErrorResponce(resp.error);
+        setAlertMessage("Recording not submitted ");
+        setShowErrorAlert(true);
+      })
+      setRefresh(!refresh);
+      console.log('login after error');
+      
+     
+      
+      
+  
+    };

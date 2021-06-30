@@ -1,0 +1,14 @@
+var today = new Date();
+  var timee = today.toString().match(/(\d{2}\:\d{2}\:\d{2})/g)[0];
+const [time, setTime] = useState(timee);
+   let timeVal = new Date();
+<KeyboardTimePickerExample
+                    value={timeVal}
+                    showTime={handleTimeValue}
+                  />
+ const handleTimeValue = (value) => {
+      const timeStr = value.toString();
+      var time = timeStr.match(/(\d{2}\:\d{2}\:\d{2})/g)[0];
+      setTime(time); 
+      console.log(time);
+    };

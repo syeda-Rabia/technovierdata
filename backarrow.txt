@@ -1,0 +1,21 @@
+import {
+  Tooltip,
+  IconButton,
+} from "@material-ui/core";
+import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import {useHistory } from "react-router-dom";
+
+*-----------------------------------------------*
+ const history = useHistory();
+
+ <IconButton
+          onClick={() => {
+            history.push("/admin/leads");
+          }}
+          aria-label="delete"
+          color="primary"
+        >
+          <Tooltip title="Go Back" placement="right" arrow>
+            <ArrowBackIcon />
+          </Tooltip>
+        </IconButton>
